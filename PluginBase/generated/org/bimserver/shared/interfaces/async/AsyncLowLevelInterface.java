@@ -184,6 +184,11 @@ public class AsyncLowLevelInterface {
 		void error(Throwable e);
 	}
 	
+	public interface GetAllLowLevelMethodCallback {
+	    void success(java.util.List<java.lang.String> result);
+	    void error(Throwable e);
+	}
+	
 	public interface RemoveAllReferencesCallback {
 		void success();
 		void error(Throwable e);
@@ -712,6 +717,18 @@ public class AsyncLowLevelInterface {
 				}
 			}
 		});
+	}
+	
+	public void getAllLowLevelMethods(final GetStringAttributesCallback callback) {
+	    executorService.submit(new Runnable(){
+            public void run(){
+                try {
+                    callback.success(syncService.getAllLowLevelMethods());
+                } catch (Throwable e) {
+                    callback.error(e);
+                }
+            }
+        });
 	}
 	
 	public void removeAllReferences(final java.lang.Long tid, final java.lang.Long oid, final java.lang.String referenceName, final RemoveAllReferencesCallback callback) {

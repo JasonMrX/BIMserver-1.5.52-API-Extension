@@ -177,6 +177,14 @@ public interface LowLevelInterface extends PublicInterface {
 		@WebParam(name = "attributeName", partName = "getStringAttributes.attributeName") String attributeName) throws ServerException, UserException;
 	
 	/**
+	 * Get a list of method names in the lowlevelinterface
+	 * 
+	 * @return A list of Strings
+	 */
+	@WebMethod(action = "getAllLowLevelMethods")
+	List<String> getAllLowLevelMethods();
+	
+	/**
 	 * Set a double attribute
 	 * 
 	 * @param tid The TransactionID

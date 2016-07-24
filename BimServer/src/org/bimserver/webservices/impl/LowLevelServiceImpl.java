@@ -523,7 +523,17 @@ public class LowLevelServiceImpl extends GenericServiceImpl implements LowLevelI
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getStringAttributes(Long tid, Long oid, String attributeName) throws ServerException, UserException {
-		return (List<String>)getAttribute(tid, oid, attributeName);
+		//return (List<String>)getAttribute(tid, oid, attributeName);
+		List<String> nameList = new ArrayList<>();
+        nameList.add("helloWorld");
+        return nameList;
+	}
+
+	@Override
+	public List<String> getAllLowLevelMethods(){
+	    List<String> nameList = new ArrayList<>();
+	    nameList.add("helloWorld");
+	    return nameList;
 	}
 	
 	private Object getAttribute(Long tid, Long oid, String attributeName) throws ServerException, UserException {

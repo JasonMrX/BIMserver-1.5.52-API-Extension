@@ -139,6 +139,10 @@ public class LowLevelInterfaceAdaptor implements org.bimserver.shared.interfaces
 		return null;
 	}
 	
+	public java.util.List<java.lang.String> getAllLowLevelMethods() {
+	    return null;
+	}
+	
 	public void removeAllReferences(java.lang.Long tid, java.lang.Long oid, java.lang.String referenceName) throws UserException, ServerException {
 	}
 	

@@ -95,6 +95,8 @@ service LowLevelInterface {
 
 	rpc getStringAttributes (GetStringAttributesRequest) returns (GetStringAttributesResponse);
 
+	rpc getAllLowLevelMethods (GetAllLowLevelMethodsRequest) returns (GetAllLowLevelMethodsResponse);
+
 	rpc removeAllReferences (RemoveAllReferencesRequest) returns (VoidResponse);
 
 	rpc removeAttribute (RemoveAttributeRequest) returns (VoidResponse);
